@@ -1,15 +1,6 @@
 dis_pl_ll = function(x, pars, xmin) {
   n = length(x)
-  joint_prob = colSums(sapply(pars, 
-                              function(i) dpldis(x, xmin, i, log=TRUE)))
-  #   ##Normalise due to xmax
-  prob_over = 0
-  #   if(!is.null(xmax))
-  #       prob_over = sapply(pars, function(i) 
-  #         log(ppldis(xmax, i, lower.tail=TRUE)))
-  #   
-  
-  return(joint_prob - n*prob_over)
+  colSums(sapply(pars, function(i) dpldis(x, xmin, i, log=TRUE)))
 }
 
 
