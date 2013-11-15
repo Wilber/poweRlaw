@@ -9,6 +9,7 @@
 \alias{conpl-class}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 \alias{contappl}
 \alias{contappl-class}
 =======
@@ -19,6 +20,10 @@
 \alias{contappl}
 \alias{contappl-class}
 >>>>>>> Adding tapered power-law distribution
+=======
+\alias{conpltap}
+\alias{conpltap-class}
+>>>>>>> Starting to add taper pl
 \alias{disexp}
 \alias{disexp-class}
 \alias{dislnorm}
@@ -33,6 +38,7 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   contappl(...)
 =======
   conpltap(...)
@@ -40,6 +46,9 @@
 =======
   contappl(...)
 >>>>>>> Adding tapered power-law distribution
+=======
+  conpltap(...)
+>>>>>>> Starting to add taper pl
 
   conlnorm(...)
 

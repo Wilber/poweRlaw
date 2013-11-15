@@ -127,6 +127,46 @@ contappl =
 
 
 #' @rdname displ
+#' @aliases conpltap-class
+#' @exportClass conpltap
+#' @export conpltap
+conpltap = 
+  setRefClass("conpltap", 
+              contains="ctn_distribution",
+              fields = list(
+                dat = function(x) {
+                  if(!missing(x) && !is.null(x)) {
+                    check_ctn_data(x)
+                    d = sort(x)
+                    internal[["cum_n"]] <<- length(d):1
+                    internal[["dat"]] <<- sort(d)
+                    xmin <<- d[1]
+                  } else internal[["dat"]]
+                },
+                xmin = function(x) {
+                  if(!missing(x) && !is.null(x)) {
+                    if(class(x) == "estimate_xmin") {
+                      pars <<- x$pars
+                      x = x$xmin
+                    }
+                    internal[["xmin"]] <<- x
+                    if(length(internal[["dat"]])) {
+                      selection = min(which(internal[["dat"]] >= (x- .Machine$double.eps ^ 0.5)))
+                      internal[["n"]] <<- internal[["cum_n"]][selection]      
+                    }
+                  } else  internal[["xmin"]]
+                }, 
+                pars = function(x) {
+                  if (!missing(x) && !is.null(x)) {
+                    if(class(x) == "estimate_pars") x = x$pars
+                    internal[["pars"]] <<- x
+                  } else internal[["pars"]]
+                }
+              )
+  )
+
+
+#' @rdname displ
 #' @aliases conlnorm-class
 #' @aliases conlnorm-class conlnorm
 #' @export conlnorm
