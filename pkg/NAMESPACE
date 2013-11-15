@@ -12,6 +12,7 @@ exportClasses(conpl)
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 exportClasses(contappl)
 =======
 exportClasses(conpltap)
@@ -22,6 +23,9 @@ exportClasses(contappl)
 =======
 exportClasses(conpltap)
 >>>>>>> Starting to add taper pl
+=======
+exportClasses(contappl)
+>>>>>>> Adding tapered power-law distribution
 exportClasses(disexp)
 exportClasses(dislnorm)
 exportClasses(displ)

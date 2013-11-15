@@ -29,12 +29,8 @@
 #' Each field has standard setters and getters.
 #' 
 #' @return a reference object
-<<<<<<< HEAD
 #' @rdname displ
 #' @aliases displ-class displ
-=======
-#' @aliases displ-class
->>>>>>> Adding tapered power-law distribution
 #' @references A discription of the tapered powerlaw distribution can be found in: 
 #' Kagan and Schoenberg, 2001. Estimation of the upper cutoff parameter for the tapered
 #' pareto distribution. Journal of Applied Probability. 

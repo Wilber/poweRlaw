@@ -20,16 +20,11 @@ setMethod("dist_pdf",
             xmin = m$getXmin(); pars = m$getPars()
             if(is.null(q)) q = m$dat
             q = q[q >= m$xmin]
-<<<<<<< HEAD
             
             l1 = plnorm(q-0.5, pars[1], pars[2], lower.tail=FALSE, log.p=TRUE)
             l2 = plnorm(q+0.5, pars[1], pars[2], lower.tail=FALSE, log.p=TRUE)
             
             pdf = l1 + log(1-exp(l2-l1)) - 
-=======
-            pdf = log(plnorm(q-0.5, pars[1], pars[2], lower.tail=FALSE) -
-                        plnorm(q+0.5, pars[1], pars[2], lower.tail=FALSE)) - 
->>>>>>> Adding tapered power-law distribution
               plnorm(xmin-0.5, pars[1], pars[2], lower.tail=FALSE, log.p=TRUE)
             
             if(!log) pdf = exp(pdf)
@@ -61,11 +56,17 @@ setMethod("dist_pdf",
             xmin = m$getXmin(); pars = m$getPars()
             if(is.null(q)) q = m$dat
             q = q[q >= m$xmin]
+<<<<<<< HEAD
             
             l1 = pexp(q-0.5, pars, lower.tail=FALSE, log.p=TRUE)
             l2 = pexp(q+0.5, pars, lower.tail=FALSE, log.p=TRUE)
             
             pdf = l1 + log(1-exp(l2-l1)) - pexp(xmin-0.5, pars, lower.tail=FALSE, log.p=TRUE)
+=======
+            pdf = log(pexp(q-0.5, pars, lower.tail=FALSE) -
+                        pexp(q+0.5, pars, lower.tail=FALSE)) - 
+              pexp(xmin-0.5, pars, lower.tail=FALSE, log.p=TRUE)
+>>>>>>> Adding tapered power-law distribution
             if(!log) pdf = exp(pdf)
             pdf
             
