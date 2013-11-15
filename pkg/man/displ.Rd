@@ -7,6 +7,8 @@
 \alias{conlnorm-class}
 \alias{conpl}
 \alias{conpl-class}
+\alias{conpltap}
+\alias{conpltap-class}
 \alias{disexp}
 \alias{disexp-class}
 \alias{dislnorm}
@@ -16,6 +18,23 @@
 \alias{dispois}
 \alias{dispois-class}
 \title{Heavy-tailed distributions}
+\usage{
+  conpl(...)
+
+  conpltap(...)
+
+  conlnorm(...)
+
+  conexp(...)
+
+  displ(...)
+
+  dislnorm(...)
+
+  dispois(...)
+
+  disexp(...)
+}
 \arguments{
   \item{...}{The object is typically created by passing
   data using the \code{dat} field. Each field has standard
