@@ -56,6 +56,26 @@ test_that("Testing log-likelihood function", {
   m$setPars(2.53282); m$setXmin(1.43628)
   expect_equal(dist_ll(m), -9276.42, 1e-1);  
   
+  ##Tap-PL
+  x = c(1, 1); n = length(x)
+  xmin = 1; alpha = 1; theta=2;
+  m = contappl$new(x); m$setPars(c(alpha, theta))
+  ll = function(x) sum(log((alpha-1)/x+1/theta)) + (alpha-1)*n*log(xmin) - 
+                         (alpha-1)*sum(log(x)) + xmin*n/theta-1/theta*sum(x)
+  
+  
+  expect_equal(dist_ll(m), ll(x))
+ 
+  x = c(1, 1, 3, 4); n = length(x)
+  m$setDat(x)
+  expect_equal(dist_ll(m), ll(x))
+  
+  xmin = 2; x= x[x>xmin]; n = length(x)
+  m$setXmin(xmin)
+  expect_equal(dist_ll(m), ll(x))
+  
+  
+  
   ##Lognormal
   x = c(1, 1)
   m = conlnorm$new(x); m$setPars(c(1,1))

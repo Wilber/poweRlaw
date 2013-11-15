@@ -91,6 +91,17 @@ test_that("Testing dist_cdf function", {
   mt$setXmin(3)
   expect_equal(dist_cdf(mt), 0.25)
   
+  ##Tapered Power-law
+  x = c(2, 2, 4)
+  xmin = 1; alpha = 1; theta=2;
+  mt = contappl$new(x); 
+  
+  mt$setXmin(xmin); mt$setPars(c(alpha, theta))
+  exact = function(x) 1-(1-(x/xmin))^(-alpha+1)*exp((xmin-x)/theta)
+  expect_equal(dist_cdf(mt), exact(x))
+  expect_equal(dist_cdf(mt, all_values=TRUE), c(0, exact(2:4)))
+  expect_equal(dist_cdf(mt, q=c(2, 4)), exact(c(2, 4)))
+  
   ##Log normal  
   x = c(2, 2, 4)
   mt = conlnorm$new(x); 
