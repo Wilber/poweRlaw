@@ -3,17 +3,11 @@ con_pl_ll = function(x, pars, xmin) {
   colSums(sapply(pars, function(i) dplcon(x, xmin, i, log=TRUE)))
 }
 
-
-
-
-
-
 contappl_ll = function(x, pars, xmin) {
   if(is.vector(pars)) pars = t(as.matrix(pars))
   n = length(x)
   colSums(apply(pars, 1, function(i) dtappl(x, xmin, i[1], i[2], log=TRUE)))
 }
-
 
 conlnorm_tail_ll = function(x, pars, xmin) {
   if(is.vector(pars)) pars = t(as.matrix(pars))
@@ -28,7 +22,6 @@ conlnorm_tail_ll = function(x, pars, xmin) {
   
 }
 
-
 conexp_tail_ll = function(x, rate, xmin) {
   n = length(x)
   joint_prob = colSums(sapply(rate, function(i) dexp(x, i, log=TRUE)))
@@ -36,18 +29,3 @@ conexp_tail_ll = function(x, rate, xmin) {
                                              lower.tail=FALSE, log.p=TRUE))
   return(joint_prob - n*prob_over)
 }
-
-
-
-
-
-
-
-
-# conlnorm_tail_ll(x, c(1,1), 1)
-# conexp_tail_ll(x, 1, 1)
-# 
-# pexp(1, 1, lower.tail=F, log.p=T)
-# log(1 - pexp(1, 1))
-# 
-# log(dexp(x, 1)/(1 - pexp(1, 1)))
