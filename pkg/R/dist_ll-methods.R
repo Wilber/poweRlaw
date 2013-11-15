@@ -56,7 +56,6 @@ setMethod("dist_ll",
 ####
 ####CTN Distributions
 ####
-
 #' @rdname dist_ll-methods
 #' @aliases dist_ll,conpl-method
 setMethod("dist_ll",
@@ -67,6 +66,20 @@ setMethod("dist_ll",
             n*log(m$pars-1) - n*log(m$xmin) - m$pars *(slx-n*log(m$xmin))
           }
 )
+
+setMethod("dist_ll",
+          signature = signature(m="contappl"),
+          definition = function(m) {
+            q = m$dat
+            n = m$internal[["n"]]; N = length(q)
+            q = q[(N-n+1):N]
+            
+            contappl_ll(q, m$getPars(), m$getXmin())
+          }
+)
+
+
+
 
 #' @rdname dist_ll-methods
 #' @aliases dist_ll,conlnorm-method

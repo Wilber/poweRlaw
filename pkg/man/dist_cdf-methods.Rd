@@ -5,6 +5,7 @@
 \alias{dist_cdf,conexp-method}
 \alias{dist_cdf,conlnorm-method}
 \alias{dist_cdf,conpl-method}
+\alias{dist_cdf,contappl-method}
 \alias{dist_cdf,disexp-method}
 \alias{dist_cdf,dislnorm-method}
 \alias{dist_cdf,displ-method}

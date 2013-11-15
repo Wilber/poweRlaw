@@ -7,8 +7,8 @@
 \alias{conlnorm-class}
 \alias{conpl}
 \alias{conpl-class}
-\alias{conpltap}
-\alias{conpltap-class}
+\alias{contappl}
+\alias{contappl-class}
 \alias{disexp}
 \alias{disexp-class}
 \alias{dislnorm}
@@ -21,7 +21,7 @@
 \usage{
   conpl(...)
 
-  conpltap(...)
+  contappl(...)
 
   conlnorm(...)
 
@@ -92,5 +92,11 @@ m$setPars(2)
 ##############################################################
 plot(m)
 lines(m)
+}
+\references{
+  A discription of the tapered powerlaw distribution can be
+  found in: Kagan and Schoenberg, 2001. Estimation of the
+  upper cutoff parameter for the tapered pareto
+  distribution. Journal of Applied Probability.
 }
 

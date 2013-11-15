@@ -1,5 +1,6 @@
 Version 0.20.3
 --------------
+ * Added the tapered power-law distribution
  * Test suite now included in the package
  * Improved numerical stability when working out discrete exp and lognormal pdfs (https://github.com/csgillespie/poweRlaw/issues/21) 
  * Bug fix: When setting parameters in distributions, no longer a strict class comparison

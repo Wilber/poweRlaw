@@ -3,12 +3,12 @@
 setMethod("dist_pdf",
           signature = signature(m="displ"),
           definition = function(m, q=NULL, log=FALSE) {
-              xmin = m$getXmin(); pars = m$getPars()
-              if(is.null(q)) q = m$dat
-              q = q[q >= m$xmin]
-              pdf = dpldis(q[q >= m$xmin], m$xmin, m$pars, TRUE)
-              if(!log) pdf = exp(pdf)
-              pdf
+            xmin = m$getXmin(); pars = m$getPars()
+            if(is.null(q)) q = m$dat
+            q = q[q >= m$xmin]
+            pdf = dpldis(q[q >= m$xmin], m$xmin, m$pars, TRUE)
+            if(!log) pdf = exp(pdf)
+            pdf
           }
 )
 
@@ -56,11 +56,17 @@ setMethod("dist_pdf",
             xmin = m$getXmin(); pars = m$getPars()
             if(is.null(q)) q = m$dat
             q = q[q >= m$xmin]
+            <<<<<<< HEAD
             
             l1 = pexp(q-0.5, pars, lower.tail=FALSE, log.p=TRUE)
             l2 = pexp(q+0.5, pars, lower.tail=FALSE, log.p=TRUE)
             
             pdf = l1 + log(1-exp(l2-l1)) - pexp(xmin-0.5, pars, lower.tail=FALSE, log.p=TRUE)
+            =======
+              pdf = log(pexp(q-0.5, pars, lower.tail=FALSE) -
+                          pexp(q+0.5, pars, lower.tail=FALSE)) - 
+              pexp(xmin-0.5, pars, lower.tail=FALSE, log.p=TRUE)
+            >>>>>>> Adding tapered power-law distribution
             if(!log) pdf = exp(pdf)
             pdf
             
@@ -93,6 +99,24 @@ setMethod("dist_pdf",
           }
 )
 
+#' @rdname dist_pdf-methods
+#' @aliases dist_pdf,contappl-method
+setMethod("dist_pdf",
+          signature = signature(m="contappl"),
+          definition = function(m, q=NULL, log=FALSE) {
+            xmin = m$getXmin(); pars = m$getPars()
+            if(is.null(q)) {
+              q = m$dat
+              n = m$internal[["n"]]; N = length(q)
+              q = q[(N-n+1):N]
+            } else {
+              q[q >= m$xmin]
+            }
+            
+            dtappl(q, xmin, pars[2], pars[2], log=log)
+            
+          }
+)
 
 
 
