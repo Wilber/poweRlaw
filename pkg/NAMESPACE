@@ -9,7 +9,11 @@ export(bootstrap_p)
 exportClasses(conexp)
 exportClasses(conlnorm)
 exportClasses(conpl)
+<<<<<<< HEAD
 exportClasses(contappl)
+=======
+exportClasses(conpltap)
+>>>>>>> Starting to add taper pl
 exportClasses(disexp)
 exportClasses(dislnorm)
 exportClasses(displ)
@@ -18,7 +22,11 @@ export(compare_distributions)
 export(conexp)
 export(conlnorm)
 export(conpl)
+<<<<<<< HEAD
 export(contappl)
+=======
+export(conpltap)
+>>>>>>> Starting to add taper pl
 export(disexp)
 export(dislnorm)
 export(displ)

@@ -7,8 +7,13 @@
 \alias{conlnorm-class}
 \alias{conpl}
 \alias{conpl-class}
+<<<<<<< HEAD
 \alias{contappl}
 \alias{contappl-class}
+=======
+\alias{conpltap}
+\alias{conpltap-class}
+>>>>>>> Starting to add taper pl
 \alias{disexp}
 \alias{disexp-class}
 \alias{dislnorm}
@@ -21,7 +26,11 @@
 \usage{
   conpl(...)
 
+<<<<<<< HEAD
   contappl(...)
+=======
+  conpltap(...)
+>>>>>>> Starting to add taper pl
 
   conlnorm(...)
 
