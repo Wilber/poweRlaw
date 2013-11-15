@@ -138,6 +138,8 @@ contappl =
                   if(!missing(x) && !is.null(x)) {
                     check_ctn_data(x)
                     d = sort(x)
+                    internal[["cum_slx"]] <<- rev(cumsum(log(rev(d))))
+                    
                     internal[["cum_n"]] <<- length(d):1
                     internal[["dat"]] <<- sort(d)
                     xmin <<- d[1]
@@ -152,6 +154,7 @@ contappl =
                     internal[["xmin"]] <<- x
                     if(length(internal[["dat"]])) {
                       selection = min(which(internal[["dat"]] >= (x- .Machine$double.eps ^ 0.5)))
+                      internal[["slx"]] <<- internal[["cum_slx"]][selection]                      
                       internal[["n"]] <<- internal[["cum_n"]][selection]      
                     }
                   } else  internal[["xmin"]]
