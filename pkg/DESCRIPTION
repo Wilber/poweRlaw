@@ -47,3 +47,4 @@ Collate:
     'poweRlaw-package.R'
     'checks.R'
     'compare_distributions.R'
+    'ptappl.R'
