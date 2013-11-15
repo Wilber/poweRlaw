@@ -30,6 +30,9 @@
 #' 
 #' @return a reference object
 #' @aliases displ-class
+#' @references A discription of the tapered powerlaw distribution can be found in: 
+#' Kagan and Schoenberg, 2001. Estimation of the upper cutoff parameter for the tapered
+#' pareto distribution. Journal of Applied Probability. 
 #' @docType class
 #' @aliases conpl
 #' @importFrom VGAM zeta

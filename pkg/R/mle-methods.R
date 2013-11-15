@@ -106,8 +106,9 @@ disexp$methods(
   }
 )
 
-#########################################################################
+#####################################################################################
 ##CTN Power-law
+#####################################################################################
 conpl$methods(
   mle = function(set = TRUE, initialise=NULL) {
     n = internal[["n"]]
@@ -137,6 +138,42 @@ conpl$methods(
     mle
   }
 )
+
+contappl$methods(
+  mle = function(set = TRUE, initialise=NULL) {
+    x = dat
+    x = x[x > xmin]
+    n = length(x)
+    if(is.null(initialise)) {
+      slx = internal[["slx"]]
+      alpha_0 = 1 + n*(slx-log(xmin)*n)^(-1)#PL MLE
+      theta_0 = c(alpha_0, 1)
+    } else {
+      theta_0 = initialise
+    }
+    # Chop off values below 
+    negloglike = function(par) {
+      r = -contappl_ll(x, par, xmin)
+      if(!is.finite(r)) r = 1e12
+      r
+    }
+    mle = suppressWarnings(optim(par=theta_0, 
+                                 fn=negloglike, 
+                                 method="L-BFGS-B", 
+                                 lower=c(1, .Machine$double.eps)))
+    if(set)
+      pars <<- mle$par
+    class(mle) = "estimate_pars"
+    names(mle)[1L] = "pars"
+    mle
+    
+  }
+)
+
+
+
+
+
 
 conlnorm$methods(
   mle = function(set = TRUE, initialise=NULL) {

@@ -16,8 +16,7 @@ displ$methods(
         freq = as.vector(tab)
         internal[["freq"]] <<- freq
         internal[["values"]] <<- values
-        internal[["cum_slx"]] <<-
-          rev(cumsum(log(rev(values))*rev(freq)))
+        internal[["cum_slx"]] <<-  rev(cumsum(log(rev(values))*rev(freq)))
         internal[["cum_n"]] <<- rev(cumsum(rev(freq)))
         internal[["dat"]] <<- x
         xmin <<- min(values)
@@ -101,8 +100,23 @@ conpl$methods(
       if(!missing(dat)) {
         check_ctn_data(dat)
         d = sort(dat)
-        internal[["cum_slx"]] <<-
-          rev(cumsum(log(rev(d))))
+        internal[["cum_slx"]] <<- rev(cumsum(log(rev(d))))
+        internal[["cum_n"]] <<- length(d):1
+        internal[["dat"]] <<- sort(d)
+        xmin <<- d[1]
+      }
+    }
+  )
+)
+contappl$methods( 
+  list(
+    initialize = function(dat) {
+      no_pars <<- 2
+      ##Use the internal attribute for copying
+      if(!missing(dat)) {
+        check_ctn_data(dat)
+        d = sort(dat)
+        internal[["cum_slx"]] <<- rev(cumsum(log(rev(d))))        
         internal[["cum_n"]] <<- length(d):1
         internal[["dat"]] <<- sort(d)
         xmin <<- d[1]

@@ -1,3 +1,4 @@
+##lseq = poweRlaw:::lseq
 #' @rdname plotting-methods-distribution
 #' @aliases lines,distribution-method
 setMethod("lines",

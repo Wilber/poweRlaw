@@ -113,9 +113,9 @@ setMethod("dist_cdf",
 )
 
 
-########################
+#################################################################################################
 ##CTN distributions
-########################
+#################################################################################################
 #' @rdname dist_cdf-methods
 #' @aliases dist_cdf,conpl-method
 setMethod("dist_cdf",
@@ -141,6 +141,36 @@ setMethod("dist_cdf",
             }
           }
 )
+
+
+#' @rdname dist_cdf-methods
+#' @aliases dist_cdf,contappl-method
+setMethod("dist_cdf",
+          signature = signature(m="contappl"),
+          definition = function(m, 
+                                q=NULL, 
+                                lower_tail=TRUE,
+                                all_values=FALSE) {
+            pars = m$pars; xmin = m$xmin
+            if(is.null(pars)) stop("Model parameters not set.")  
+            if(all_values) {
+              xmax = max(m$dat)
+              q = xmin:xmax
+            } else if(is.null(q)) {
+              q = m$dat
+              n = m$internal[["n"]]; N = length(q)
+              q = q[(N-n+1):N]
+            } 
+            
+            p = ptappl(q, xmin, pars[1], pars[2])
+            if(!lower_tail) {
+              p = 1 - p
+            }
+            return(p)
+          }
+)
+
+
 
 #' @rdname dist_cdf-methods
 #' @aliases dist_cdf,conlnorm-method
