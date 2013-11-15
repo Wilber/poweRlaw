@@ -6,6 +6,7 @@ Version 0.20.3
  * Bug fix: When setting parameters in distributions, no longer a strict class comparison
  * Bug fix: Error when the length of xmins is 1 in estimate_xmin (https://github.com/csgillespie/poweRlaw/issues/20).
 Thanks to @linzhp
+ * Added the tapered power-law distribution
 
 Version 0.20.2
 --------------

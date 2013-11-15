@@ -10,10 +10,14 @@ exportClasses(conexp)
 exportClasses(conlnorm)
 exportClasses(conpl)
 <<<<<<< HEAD
+<<<<<<< HEAD
 exportClasses(contappl)
 =======
 exportClasses(conpltap)
 >>>>>>> Starting to add taper pl
+=======
+exportClasses(contappl)
+>>>>>>> Adding tapered power-law distribution
 exportClasses(disexp)
 exportClasses(dislnorm)
 exportClasses(displ)
@@ -22,11 +26,8 @@ export(compare_distributions)
 export(conexp)
 export(conlnorm)
 export(conpl)
-<<<<<<< HEAD
-export(contappl)
-=======
 export(conpltap)
->>>>>>> Starting to add taper pl
+export(contappl)
 export(disexp)
 export(dislnorm)
 export(displ)
