@@ -3,12 +3,12 @@
 setMethod("dist_pdf",
           signature = signature(m="displ"),
           definition = function(m, q=NULL, log=FALSE) {
-              xmin = m$getXmin(); pars = m$getPars()
-              if(is.null(q)) q = m$dat
-              q = q[q >= m$xmin]
-              pdf = dpldis(q[q >= m$xmin], m$xmin, m$pars, TRUE)
-              if(!log) pdf = exp(pdf)
-              pdf
+            xmin = m$getXmin(); pars = m$getPars()
+            if(is.null(q)) q = m$dat
+            q = q[q >= m$xmin]
+            pdf = dpldis(q[q >= m$xmin], m$xmin, m$pars, TRUE)
+            if(!log) pdf = exp(pdf)
+            pdf
           }
 )
 
@@ -21,7 +21,7 @@ setMethod("dist_pdf",
             if(is.null(q)) q = m$dat
             q = q[q >= m$xmin]
             pdf = log(plnorm(q-0.5, pars[1], pars[2], lower.tail=FALSE) -
-                  plnorm(q+0.5, pars[1], pars[2], lower.tail=FALSE)) - 
+                        plnorm(q+0.5, pars[1], pars[2], lower.tail=FALSE)) - 
               plnorm(xmin-0.5, pars[1], pars[2], lower.tail=FALSE, log.p=TRUE)
             if(!log) pdf = exp(pdf)
             pdf
@@ -53,7 +53,7 @@ setMethod("dist_pdf",
             if(is.null(q)) q = m$dat
             q = q[q >= m$xmin]
             pdf = log(pexp(q-0.5, pars, lower.tail=FALSE) -
-                  pexp(q+0.5, pars, lower.tail=FALSE)) - 
+                        pexp(q+0.5, pars, lower.tail=FALSE)) - 
               pexp(xmin-0.5, pars, lower.tail=FALSE, log.p=TRUE)
             if(!log) pdf = exp(pdf)
             pdf
@@ -87,6 +87,24 @@ setMethod("dist_pdf",
           }
 )
 
+#' @rdname dist_pdf-methods
+#' @aliases dist_pdf,contappl-method
+setMethod("dist_pdf",
+          signature = signature(m="contappl"),
+          definition = function(m, q=NULL, log=FALSE) {
+            xmin = m$getXmin(); pars = m$getPars()
+            if(is.null(q)) {
+              q = m$dat
+              n = m$internal[["n"]]; N = length(q)
+              q = q[(N-n+1):N]
+            } else {
+              q[q >= m$xmin]
+            }
+            
+            dtappl(q, xmin, pars[2], pars[2], log=log)
+            
+          }
+)
 
 
 

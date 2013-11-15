@@ -2,6 +2,7 @@ Version 0.20.2
 --------------
  * Discrete power-law mle now uses L-BFGS-B optimiser by default
  * Vignette source now included within the package
+ * Added the tapered power-law distribution
  * Bug fix in lines methods
  * Bug fix: use data_max argument in estimate_xmin (https://github.com/csgillespie/poweRlaw/issues/13) Thanks to @pgoldberg.
 
