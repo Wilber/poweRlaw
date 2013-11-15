@@ -6,6 +6,8 @@
 \alias{conlnorm-class}
 \alias{conpl}
 \alias{conpl-class}
+\alias{conpltap}
+\alias{conpltap-class}
 \alias{disexp}
 \alias{disexp-class}
 \alias{dislnorm}
@@ -17,6 +19,8 @@
 \title{Heavy-tailed distributions}
 \usage{
   conpl(...)
+
+  conpltap(...)
 
   conlnorm(...)
 
