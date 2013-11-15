@@ -9,6 +9,16 @@ contappl_ll = function(x, pars, xmin) {
   colSums(apply(pars, 1, function(i) dtappl(x, xmin, i[1], i[2], log=TRUE)))
 }
 
+
+
+
+contappl_ll = function(x, pars, xmin) {
+  if(is.vector(pars)) pars = t(as.matrix(pars))
+  n = length(x)
+  colSums(apply(pars, 1, function(i) dtappl(x, xmin, i[1], i[2], log=TRUE)))
+}
+
+
 conlnorm_tail_ll = function(x, pars, xmin) {
   if(is.vector(pars)) pars = t(as.matrix(pars))
   n = length(x)
