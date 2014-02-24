@@ -6,30 +6,6 @@ S3method(plot,compare_distributions)
 export()
 export(bootstrap)
 export(bootstrap_p)
-exportClasses(conexp)
-exportClasses(conlnorm)
-exportClasses(conpl)
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-exportClasses(contappl)
-=======
-exportClasses(conpltap)
->>>>>>> Starting to add taper pl
-=======
-exportClasses(contappl)
->>>>>>> Adding tapered power-law distribution
-=======
-exportClasses(conpltap)
->>>>>>> Starting to add taper pl
-=======
-exportClasses(contappl)
->>>>>>> Adding tapered power-law distribution
-exportClasses(disexp)
-exportClasses(dislnorm)
-exportClasses(displ)
-exportClasses(dispois)
 export(compare_distributions)
 export(conexp)
 export(conlnorm)
@@ -49,8 +25,8 @@ export(ppldis)
 export(rplcon)
 export(rpldis)
 exportClasses(conexp)
-exportClasses(conlnorm)
 exportClasses(conpl)
+exportClasses(contappl)
 exportClasses(disexp)
 exportClasses(dislnorm)
 exportClasses(displ)

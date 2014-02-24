@@ -3,32 +3,11 @@
 \name{conpl-class}
 \alias{conexp}
 \alias{conexp-class}
-\alias{conlnorm}
 \alias{conlnorm-class}
 \alias{conpl}
 \alias{conpl-class}
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 \alias{contappl}
 \alias{contappl-class}
-=======
-\alias{conpltap}
-\alias{conpltap-class}
->>>>>>> Starting to add taper pl
-=======
-\alias{contappl}
-\alias{contappl-class}
->>>>>>> Adding tapered power-law distribution
-=======
-\alias{conpltap}
-\alias{conpltap-class}
->>>>>>> Starting to add taper pl
-=======
-\alias{contappl}
-\alias{contappl-class}
->>>>>>> Adding tapered power-law distribution
 \alias{disexp}
 \alias{disexp-class}
 \alias{dislnorm}
@@ -38,39 +17,6 @@
 \alias{dispois}
 \alias{dispois-class}
 \title{Heavy-tailed distributions}
-\usage{
-  conpl(...)
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-  contappl(...)
-=======
-  conpltap(...)
->>>>>>> Starting to add taper pl
-=======
-  contappl(...)
->>>>>>> Adding tapered power-law distribution
-=======
-  conpltap(...)
->>>>>>> Starting to add taper pl
-=======
-  contappl(...)
->>>>>>> Adding tapered power-law distribution
-
-  conlnorm(...)
-
-  conexp(...)
-
-  displ(...)
-
-  dislnorm(...)
-
-  dispois(...)
-
-  disexp(...)
-}
 \arguments{
   \item{...}{The object is typically created by passing
   data using the \code{dat} field. Each field has standard
@@ -130,9 +76,8 @@ plot(m)
 lines(m)
 }
 \references{
-  A discription of the tapered powerlaw distribution can be
-  found in: Kagan and Schoenberg, 2001. Estimation of the
-  upper cutoff parameter for the tapered pareto
-  distribution. Journal of Applied Probability.
+A discription of the tapered powerlaw distribution can be found in:
+Kagan and Schoenberg, 2001. Estimation of the upper cutoff parameter for the tapered
+pareto distribution. Journal of Applied Probability.
 }
 

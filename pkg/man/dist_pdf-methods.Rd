@@ -24,6 +24,8 @@ dist_pdf(m, q = NULL, log = FALSE)
 
 \S4method{dist_pdf}{conpl}(m, q = NULL, log = FALSE)
 
+\S4method{dist_pdf}{contappl}(m, q = NULL, log = FALSE)
+
 \S4method{dist_pdf}{conlnorm}(m, q = NULL, log = FALSE)
 
 \S4method{dist_pdf}{conexp}(m, q = NULL, log = FALSE)
