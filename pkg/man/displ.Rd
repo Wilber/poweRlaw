@@ -17,6 +17,26 @@
 \alias{dispois}
 \alias{dispois-class}
 \title{Heavy-tailed distributions}
+<<<<<<< HEAD
+=======
+\usage{
+  conpl(...)
+
+  contappl(...)
+
+  conlnorm(...)
+
+  conexp(...)
+
+  displ(...)
+
+  dislnorm(...)
+
+  dispois(...)
+
+  disexp(...)
+}
+>>>>>>> a3ff9631244c20c501039ac83596564f96d0834d
 \arguments{
   \item{...}{The object is typically created by passing
   data using the \code{dat} field. Each field has standard
@@ -76,8 +96,15 @@ plot(m)
 lines(m)
 }
 \references{
+<<<<<<< HEAD
 A discription of the tapered powerlaw distribution can be found in:
 Kagan and Schoenberg, 2001. Estimation of the upper cutoff parameter for the tapered
 pareto distribution. Journal of Applied Probability.
+=======
+  A discription of the tapered powerlaw distribution can be
+  found in: Kagan and Schoenberg, 2001. Estimation of the
+  upper cutoff parameter for the tapered pareto
+  distribution. Journal of Applied Probability.
+>>>>>>> a3ff9631244c20c501039ac83596564f96d0834d
 }
 
