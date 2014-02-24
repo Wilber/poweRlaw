@@ -6,17 +6,6 @@ S3method(plot,compare_distributions)
 export()
 export(bootstrap)
 export(bootstrap_p)
-<<<<<<< HEAD
-=======
-exportClasses(conexp)
-exportClasses(conlnorm)
-exportClasses(conpl)
-exportClasses(contappl)
-exportClasses(disexp)
-exportClasses(dislnorm)
-exportClasses(displ)
-exportClasses(dispois)
->>>>>>> a3ff9631244c20c501039ac83596564f96d0834d
 export(compare_distributions)
 export(conexp)
 export(conlnorm)

@@ -56,17 +56,11 @@ setMethod("dist_pdf",
             xmin = m$getXmin(); pars = m$getPars()
             if(is.null(q)) q = m$dat
             q = q[q >= m$xmin]
-<<<<<<< HEAD
             l1 = pexp(q-0.5, pars, lower.tail=FALSE, log.p=TRUE)
             l2 = pexp(q+0.5, pars, lower.tail=FALSE, log.p=TRUE)
             
             pdf = l1 + log(1-exp(l2-l1)) - pexp(xmin-0.5, pars, lower.tail=FALSE, log.p=TRUE)
 
-=======
-            pdf = log(pexp(q-0.5, pars, lower.tail=FALSE) -
-                        pexp(q+0.5, pars, lower.tail=FALSE)) - 
-              pexp(xmin-0.5, pars, lower.tail=FALSE, log.p=TRUE)
->>>>>>> a3ff9631244c20c501039ac83596564f96d0834d
             if(!log) pdf = exp(pdf)
             pdf
             
